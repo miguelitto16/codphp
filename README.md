@@ -1,4 +1,4 @@
-# codphp
+# código Php
 
 # 1 Par ou Ímpar
 O código permite ao usuário inserir um número e verifica se o número é par ou ímpar.
