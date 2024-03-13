@@ -4,52 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Verificar Número Redondo</title>
 </head>
 <body>
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Par ou Ímpar</title>
-</head>
-<body>
-<h1>Código para verificação de par ou ímpar e redondeza</h1>
- 
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Se o formulário foi enviado via método POST
-    $num = $_POST["numero"];
+    <h1>Verificação de Número</h1>
 
-    if (is_numeric($num)) {
-        // Verifica se a entrada é um número
-        if ($num % 2 == 0) {
-            echo "O número informado é PAR e ";
-        } else {
-            echo "O número informado é Ímpar e ";
-        }
+    <form method="post" action="">
+        <label for="numero">Por favor, insira um número:</label>
+        <input type="text" id="numero" name="numero" required>
+        <button type="submit">Verificar</button>
+    </form>
 
-        // Verifica se o número é redondo
-        if (round($num) == $num) {
-            echo "redondo.";
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        
+        $numero = $_POST["numero"];
+
+        if (is_numeric($numero)) {
+            if (strpos($numero, '.') !== false) {
+                echo "<p>O número $numero é quebrado (não redondo).</p>";
+            } else {
+                echo "<p>O número $numero é redondo (inteiro).</p>";
+            }
         } else {
-            echo "não é redondo.";
+            echo "<p>Desculpe, parece que você não inseriu um número válido. Tente novamente.</p>";
         }
-    } else {
-        echo "Por favor, insira um número válido.";
     }
-}
-?>
- 
-<form method="post" action="">
-    <label for="numero">Informe um número:</label>
-    <input type="text" id="numero" name="numero" required>
-    <button type="submit">Verificar</button>
-</form>
+    ?>
 </body>
 </html>
 
-</body>
-</html>

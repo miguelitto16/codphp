@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,13 +19,12 @@
      }
  }
   
- // Teste com diferentes números
- verificarNumero(10); // Saída: 10 é positivo.
+ 
+ verificarNumero(10); 
  echo "<br>";
- verificarNumero(-5); // Saída: -5 é negativo.
+ verificarNumero(-5); 
  echo "<br>";
- verificarNumero(0); // Saída: O número é neutro (zero).
-  
+ verificarNumero(0);
  ?>
   
 </body>

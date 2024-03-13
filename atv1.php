@@ -11,11 +11,11 @@
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Se o formulário foi enviado via método POST
+        
         $num = $_POST["numero"];
 
         if (is_numeric($num)) {
-            // Verifica se a entrada é um número
+          
             if ($num % 2 == 0) {
                 echo "O número informado é PAR";
             } else {
